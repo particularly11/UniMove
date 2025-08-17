@@ -1,0 +1,65 @@
+.activity-list-page {
+  padding: 24px 0;
+}
+
+.filters-card {
+  margin-bottom: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.search-section {
+  margin-bottom: 16px;
+}
+
+.filter-section {
+  margin-top: 16px;
+}
+
+.activities-section {
+  margin-bottom: 32px;
+  min-height: 400px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 48px 24px;
+  border-radius: 8px;
+}
+
+.empty-content {
+  color: #999;
+}
+
+.empty-content h3 {
+  margin: 16px 0 8px;
+  color: #333;
+}
+
+.pagination-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+@media (max-width: 768px) {
+  .activity-list-page {
+    padding: 16px 0;
+  }
+  
+  .filters-card {
+    margin-bottom: 16px;
+  }
+  
+  .filter-section .ant-col {
+    margin-bottom: 8px;
+  }
+  
+  .activities-section {
+    margin-bottom: 24px;
+  }
+  
+  .pagination-section {
+    margin-top: 24px;
+  }
+}

@@ -1,0 +1,179 @@
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.about-hero {
+  text-align: center;
+  margin-bottom: 32px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  color: white;
+}
+
+.about-hero .ant-card-body {
+  padding: 64px 32px;
+}
+
+.about-hero h1 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 24px;
+}
+
+.about-hero-description {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.about-statistics {
+  margin-bottom: 32px;
+}
+
+.about-statistics .ant-statistic {
+  text-align: center;
+}
+
+.about-statistics .ant-statistic-title {
+  color: #666;
+  font-size: 16px;
+}
+
+.about-statistics .ant-statistic-content {
+  color: #1890ff;
+  font-weight: 600;
+}
+
+.about-features,
+.about-timeline,
+.about-tech,
+.about-contact {
+  margin-bottom: 24px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  background: #e3f2fd;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  font-size: 24px;
+  color: #1890ff;
+  margin-top: 4px;
+}
+
+.feature-content {
+  flex: 1;
+}
+
+.feature-content h4 {
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.feature-content p {
+  margin: 0;
+  color: #666;
+  line-height: 1.5;
+}
+
+.about-timeline .ant-timeline-item-content {
+  margin-left: 8px;
+}
+
+.tech-category {
+  height: 100%;
+}
+
+.tech-category h4 {
+  color: #1890ff;
+  margin-bottom: 16px;
+}
+
+.tech-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tech-category li {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  color: #666;
+  position: relative;
+}
+
+.tech-category li:last-child {
+  border-bottom: none;
+}
+
+.tech-category li:before {
+  content: '▸';
+  color: #1890ff;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.about-contact {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  border: none;
+  color: white;
+}
+
+.about-contact h3,
+.about-contact p {
+  color: white;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 16px;
+  }
+  
+  .about-hero .ant-card-body {
+    padding: 48px 24px;
+  }
+  
+  .about-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .feature-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .feature-icon {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .about-hero-description {
+    font-size: 1rem;
+  }
+  
+  .about-statistics .ant-col {
+    margin-bottom: 16px;
+  }
+}
