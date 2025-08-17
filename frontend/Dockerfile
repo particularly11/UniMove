@@ -1,5 +1,5 @@
-# 使用官方 Node.js 镜像
-FROM node:18-alpine
+# 多阶段构建：第一阶段 - 构建应用
+FROM node:18-alpine as build
 
 # 设置工作目录
 WORKDIR /app
@@ -13,8 +13,20 @@ RUN npm ci
 # 复制源代码
 COPY . .
 
-# 暴露端口
-EXPOSE 5173
+# 构建生产版本
+RUN npm run build
 
-# 启动命令（开发模式，允许外部访问）
-CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
+# 第二阶段 - 运行时环境（使用 nginx 提供静态文件服务）
+FROM nginx:alpine
+
+# 删除默认的 nginx 静态文件
+RUN rm -rf /usr/share/nginx/html/*
+
+# 复制构建产物到 nginx 静态文件目录
+COPY --from=build /app/dist /usr/share/nginx/html
+
+# 暴露端口
+EXPOSE 80
+
+# 启动 nginx
+CMD ["nginx", "-g", "daemon off;"]

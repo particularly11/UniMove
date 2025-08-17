@@ -33,7 +33,6 @@ import { updateUser } from '../store/authSlice';
 import { userAPI } from '../api/user';
 import { orderAPI, type Order } from '../api/order';
 import { commentAPI, type Comment } from '../api/comment';
-import { activityAPI, type Activity } from '../api/activity';
 import './Profile.css';
 
 const { Title, Text } = Typography;
@@ -52,10 +51,8 @@ const Profile: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [orders, setOrders] = useState<Order[]>([]);
   const [comments, setComments] = useState<Comment[]>([]);
-  const [myActivities, setMyActivities] = useState<Activity[]>([]);
   const [ordersLoading, setOrdersLoading] = useState(false);
   const [commentsLoading, setCommentsLoading] = useState(false);
-  const [activitiesLoading, setActivitiesLoading] = useState(false);
   const [editCommentModalVisible, setEditCommentModalVisible] = useState(false);
   const [editingComment, setEditingComment] = useState<Comment | null>(null);
   const [form] = Form.useForm();
